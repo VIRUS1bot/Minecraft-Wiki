@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  </head>
+  <body>
+    <h1>Hello, world!</h1>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+  </body>
+</html>
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+  <head><script src="/docs/5.3/assets/js/color-modes.js"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.115.4">
+    <title>Carousel Template · Bootstrap v5.3</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/carousel/">
+
+    
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+
+<link href="/docs/5.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+    <!-- Favicons -->
+<link rel="apple-touch-icon" href="/docs/5.3/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+<link rel="icon" href="/docs/5.3/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/docs/5.3/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="manifest" href="/docs/5.3/assets/img/favicons/manifest.json">
+<link rel="mask-icon" href="/docs/5.3/assets/img/favicons/safari-pinned-tab.svg" color="#712cf9">
+<link rel="icon" href="/docs/5.3/assets/img/favicons/favicon.ico">
+<meta name="theme-color" content="#712cf9">
+
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        width: 100%;
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .btn-bd-primary {
+        --bd-violet-bg: #712cf9;
+        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+        --bs-btn-font-weight: 600;
+        --bs-btn-color: var(--bs-white);
+        --bs-btn-bg: var(--bd-violet-bg);
+        --bs-btn-border-color: var(--bd-violet-bg);
+        --bs-btn-hover-color: var(--bs-white);
+        --bs-btn-hover-bg: #6528e0;
+        --bs-btn-hover-border-color: #6528e0;
+        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+        --bs-btn-active-color: var(--bs-btn-hover-color);
+        --bs-btn-active-bg: #5a23c8;
+        --bs-btn-active-border-color: #5a23c8;
+      }
+      .bd-mode-toggle {
+        z-index: 1500;
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="carousel.css" rel="stylesheet">
+  </head>
+  <body>
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+      <symbol id="check2" viewBox="0 0 16 16">
+        <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+      </symbol>
+      <symbol id="circle-half" viewBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+      </symbol>
+      <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+        <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+        <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+      </symbol>
+      <symbol id="sun-fill" viewBox="0 0 16 16">
+        <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+      </symbol>
+    </svg>
+
+    <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+      <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
+              id="bd-theme"
+              type="button"
+              aria-expanded="false"
+              data-bs-toggle="dropdown"
+              aria-label="Toggle theme (auto)">
+        <svg class="bi my-1 theme-icon-active" width="1em" height="1em"><use href="#circle-half"></use></svg>
+        <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+            <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#sun-fill"></use></svg>
+            Light
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+            <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#moon-stars-fill"></use></svg>
+            Dark
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
+            <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#circle-half"></use></svg>
+            Auto
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    
+<header data-bs-theme="dark">
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Carousel</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main>
+    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+
+  <!-- Marketing messaging and featurettes
+  ================================================== -->
+  <!-- Wrap the rest of the page in another container to center all the content. -->
+
+  <div class="container marketing">
+
+    <!-- Three columns of text below the carousel -->
+    <div class="row">
+      <div class="col-lg-4">
+        <img src="https://static.wikia.nocookie.net/minecraft_ru_gamepedia/images/f/fd/Notch3.jpg/revision/latest/scale-to-width-down/250?cb=20111010230732" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
+        <h2 class="fw-normal">Биография</h2>
+        <p>Биография Маркуса Перссона, создателя майнкрафта</p>
+        <p><a class="btn btn-secondary" href="https://ru.wikipedia.org/wiki/%D0%9F%D0%B5%D1%80%D1%81%D1%81%D0%BE%D0%BD,_%D0%9C%D0%B0%D1%80%D0%BA%D1%83%D1%81">Посмотреть детали &raquo;</a></p>
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4">
+        <img src="data:image/jpeg;base64,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" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
+        <h2 class="fw-normal">Майнкрафт</h2>
+        <p>Википедия</p>
+        <p><a class="btn btn-secondary" href="https://ru.wikipedia.org/wiki/Minecraft"> Посмотреть детали &raquo;</a></p>
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4">
+        <img src="data:image/jpeg;base64,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" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
+        <h2 class="fw-normal">TLauncher</h2>
+        <p>Установить TLauncher</p>
+        <p><a class="btn btn-secondary" href="https://tlauncher.org/">Установить &raquo;</a></p>
+      </div><!-- /.col-lg-4 -->
+    </div><!-- /.row -->
+
+
+    <!-- START THE FEATURETTES -->
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading fw-normal lh-1">Minecraft 1.20 <span class="text-body-secondary"></span></h2>
+       <p class="lead">Новое глобальное обновление!<br>
+       1.20 — это крупное обновление Java Edition Trails & Tales, выпущенное 7 июня 2023 года. Обновление было анонсировано на Minecraft Live 2022 15 октября 2022 года.</p> 
+       <a href="https://cyber-gu.ru/minecraft-120/">Подробности</a>
+       <p>Майнкрафт 1.20.1 является очередным обновлением игры, которое выйдет летом 2023 года, оно имеет название Trails & Tales - История и Истории (на вики Быль и Байки, в некоторых местах Тропы и сказки), обновление посвящено самовыражению через репрезентацию и рассказывание историй и построение мира. Внутри этой новости вы найдете актуальную информацию о обновлении майнкрафта до версии 1.20, все новые блоки, механики и прочие изменения которые будут в обновлении.
+
+        На данный момент разработчики указали главную тему апдейта как — "самовыражение, креативность и внутренняя мотивация". Это дает слабые намеки, ведь каждое крупное обновление содержит декоративные и функциональные блоки, новых мобов и разную полезную мелочовку. На момент середины мая и с выходом первого предварительного релиза стало ясно, что обновление не будет очень крупным, тем не менее в игре появятся новые блоки, механики, мобы.</p>
+    
+      </div>
+      <div class="col-md-5">
+        <img src="https://playerman.ru/wp-content/uploads/39997895f7682b965fffa27c7cc06155.jpg" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"/><text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em">500x500</text></svg>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading fw-normal lh-1">Minecraft 1.19 <span class="text-body-secondary"></span></h2>
+        <p class="lead">Прошлое обновление<br>
+          1.19, выпуск The Wild Update, — это крупное обновление для Java Edition, выпущенное 7 июня 2022 года.</p>
+        <a href="https://minecraft.fandom.com/ru/wiki/1.19_(Java_Edition)">Подробности</a>
+        <p>1.19 , первый выпуск The Wild Update , представляет собой крупное обновление для Java Edition , выпущенное 7 июня 2022 года. [1] [2] Впервые об обновлении было объявлено 16 октября 2021 года во время Minecraft Live 2021 . В нем представлены совершенно новые материалы, блоки и локации, такие как биомы Глубокой тьмы и мангровых болот ; древние города ; мобы, такие как надзиратель , лягушка , головастик и аллей , а также новые предметы, доступные только в этих новых биомах .</p>
+      </div>
+      <div class="col-md-5 order-md-1">
+        <img src="https://modscraft.net/uploads/posts/2022-06/1654619289_wild-update-art.jpg" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"/><text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em">500x500</text></svg>
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading fw-normal lh-1">Mojang<span class="text-body-secondary"></span></h2>
+        <p class="lead">Компания которое разработала и разрабатывает Minecraft<br>
+          mojäng «штуковина», ранее Mojang Specifications и Mojang AB) — шведская игровая компания, принадлежащая Xbox Game Studios. Наиболее известна как разработчик игры Minecraft. Основана в мае 2009 года Маркусом Перссоном. В 2014 году была куплена корпорацией Microsoft за 2,5 миллиарда долларов.</p>
+        <a href="https://ru.wikipedia.org/wiki/Mojang_Studios">Подробности</a>
+      </div>
+      <div class="col-md-5">
+        <img src="data:image/png;base64,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" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"/><text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em">500x500</text></svg>
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <!-- /END THE FEATURETTES -->
+
+  </div><!-- /.container -->
+
+
+  <!-- FOOTER -->
+  <footer class="container">
+    <p class="float-end"><a href="#">Back to top</a></p>
+    <p>&copy; 2009–2023 Company, Mojang. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+  </footer>
+</main>
+<script src="/docs/5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
+    </body>
+</html>
